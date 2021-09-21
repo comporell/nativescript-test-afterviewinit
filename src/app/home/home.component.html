@@ -2,8 +2,11 @@
   <Label text="Home"></Label>
 </ActionBar>
 
-<GridLayout>
-  <ListView [items]="items">
+<GridLayout (loaded)="loaded($event)">
+  <ActivityIndicator row="0" col="0" id="aiTasks" horizontalAlignment="center"
+                     verticalAlignment="middle"
+                     class="fs-60" busy="true"></ActivityIndicator>
+  <ListView id="testList" [items]="items">
     <ng-template let-item="item">
       <StackLayout [nsRouterLink]="['../item', item.id]">
         <Label [text]="item.name"></Label>
