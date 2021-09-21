@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   items: Array<DataItem>
   aiTasks: ActivityIndicator;
   testList: ListView;
-  page:Page;
+  page1:Page;
 
   constructor(private _itemService: DataService, private page2: Page) {}
 
@@ -19,18 +19,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.items = this._itemService.getItems()
   }
   ngAfterViewInit(): void{
-    console.log(this.page2);
+	console.log("aftweviewinit fired");
+    
+	//comment here below to fire loaded
+	console.log(this.page2);
     console.log(this.page2.nativeView);
+	this.aiTasks = <ActivityIndicator> this.page1.getViewById("aiTasks");
+    console.log(this.aiTasks);
   }
 
   loaded(args){
-    console.log("loaded");
+    console.log("loaded fired");
     console.log(this.page2);
-    console.log(this.page2.getViewById("aiTasks"));
-    /*this.page = <Page> args.object;
-    this.aiTasks = <ActivityIndicator> this.page.getViewById("aiTasks");
-    //this.testList = <ListView> getViewById("testList");
+	console.log(this.page2.getViewById("aiTasks"));
+    this.page1 = <Page> args.object;
+    this.aiTasks = <ActivityIndicator> this.page1.getViewById("aiTasks");
     console.log(this.aiTasks);
-    setTimeout(() => this.aiTasks.busy = false, 2000);*/
+    setTimeout(() => this.aiTasks.busy = false, 2000);
   }
 }
