@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.test2',
+  id: 'org.nativescript.testafterviewinit',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {

@@ -1,8 +1,7 @@
 {
-  "name": "test2",
+  "name": "nativescript-test-afterviewinit",
   "main": "src/main.ts",
   "version": "1.0.0",
-  "private": true,
   "dependencies": {
     "@angular/animations": "^12.2.0",
     "@angular/common": "^12.2.0",
